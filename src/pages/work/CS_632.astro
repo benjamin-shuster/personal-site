@@ -1,0 +1,39 @@
+---
+import { getCollection } from "astro:content";
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+import PortfolioPreview from "../../components/PortfolioPreview.astro";
+import Hero from "../../components/Hero.astro";
+import Grid from "../../components/Grid.astro";
+
+const projects = (await getCollection("work"))
+  .filter((project) => project.data.tags.includes("CS 632 Content"))
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+---
+
+<BaseLayout
+  title="CS 632 Content | Ben Shuster"
+  description="Pages needed for the CS 632 course at NJIT"
+>
+  <div class="stack gap-20">
+    <main class="wrapper stack gap-8">
+      <Hero
+        title="CS 632 Content"
+        taglines={[
+          "Blog posts for CS 632",
+        ]}
+        align="start"
+      />
+      <Grid variant="offset">
+        {
+          projects.map((project) => (
+            <li>
+              <PortfolioPreview project={project} />
+            </li>
+          ))
+        }
+      </Grid>
+    </main>
+  </div>
+</BaseLayout>

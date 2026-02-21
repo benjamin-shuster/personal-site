@@ -19,7 +19,7 @@ Review URL contex: [softwareadvice](https://www.softwareadvice.com/data-governan
   
 This is a review aggregation site, bit to find it you can filter by 1 star and used for less then 12 months. 
 
-[!Screen shot of review from Madelyne](/personal-site/assets/review.png)
+![Screen shot of review from Madelyne](/personal-site/assets/review.png)
 
 Section being refrenced: 
 > The documentation is lacking and the most useful guides are provided by [sensitive content hidden] who unfortunately passed away this year.  
